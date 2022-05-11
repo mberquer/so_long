@@ -2,5 +2,5 @@
 
 int main()
 {
-
+    so_long();
 }
