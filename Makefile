@@ -10,8 +10,7 @@ CFLAGS	= -Wall -Wextra -Werror -g
 	${CC} ${CFLAGS} -MMD -c $< -o $@ ${INCDIR}
 
 ${NAME}:${OBJS}
-	make -s -C libmlx
-	make -s -C libft
+	make -s -C mlx_linux
 	${CC} ${CFLAGS} ${OBJS} ${LIBDIR} ${LIBINC} -o ${NAME}
 
 all:${NAME}
@@ -21,8 +20,7 @@ clean:
 	${RM} ${OBJS} ${DEPS}
 
 fclean:clean
-	make -s -C libmlx clean
-	make -s -C libft fclean
+	make -s -C mlx_linux clean
 	${RM} ${NAME}
 
 re:fclean all
