@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 11:26:09 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/16 11:55:22 by mberquer         ###   ########.fr       */
+/*   Created: 2022/05/16 13:37:22 by mberquer          #+#    #+#             */
+/*   Updated: 2022/05/16 13:59:38 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "so_long.h"
-
-int main(int ac, char **av)
+so_check(t_data data)
 {
-	//t_data	*data;
+	int	x;
+	int	y;
+	int	size;
 
-	if (ac = 2 && check(av[1]))
+	y = 0;
+	size = so_len(data->map[0]);
+	while (data->map[y])
 	{
-		//so_long()
+		x = 0;
+		while (data->map[y][x])
+		{
+			
+		}
 	}
-	write(1, "Error\nProvide .ber map\n", 23);
 }
