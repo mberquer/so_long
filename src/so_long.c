@@ -6,19 +6,20 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:09 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/16 11:55:22 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:11:12 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "so_long.h"
+#include "so_long.h"
 
 int main(int ac, char **av)
 {
-	//t_data	*data;
+	t_data	*data;
 
 	if (ac = 2 && check(av[1]))
 	{
-		//so_long()
+		so_parse(data, av[1]);
+		so_check(data);
 	}
-	write(1, "Error\nProvide .ber map\n", 23);
+	write(1, "Error\nprovide .ber map\n", 23);
 }
