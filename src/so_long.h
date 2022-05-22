@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:07 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/16 13:23:18 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/05/22 12:21:48 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 	void	*img_player;
 	void	*img_exit;
 	void	*img_nothing;
+	void	*img_collectible;
 	int		c_count;
 	int		p_count;
 	int		e_count;
