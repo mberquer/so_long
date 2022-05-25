@@ -6,25 +6,42 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:09 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/22 12:21:46 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:21:08 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int ac, char **av)
+void	so_size(t_data data)
+{
+	data->l_win = 0;
+	data->h_win = 0;
+	while (data->map[0][data->l_win] != '\n')
+		data->l_win++;
+	while (data->map[data->h_win])
+		data->h_win++;
+}
+
+int	main(int ac, char **av)
 {
 	t_data	*data;
 
-	if (ac = 2 && check(av[1]))
+	if (ac == 2 && check(av[1]))
 	{
 		data->mlx = mlx_init();
 		if (!data->mlx)
 			return (0);
-		so_parse(data, av[1]);
-		so_check(data);
-		data->win = mlx_new_window(data->mlx, 32 * data->l_win, 32 * data->h_win, "bababoi");
-		so_image(data);
+		if (!so_parse(data, av[1]))
+			return (so_free);
+		if (!so_check(data))
+			return (so_free);
+		so_size(data);
+		data->win = mlx_new_window
+			(data->mlx, 32 * data->l_win, 32 * data->h_win, "bababoi");
+		if (!so_image(data))
+			return (so_free);
+		so_event(data);
+		mlx_loop(data->mlx);
 	}
 	write(1, "Error\nprovide .ber map\n", 23);
 }

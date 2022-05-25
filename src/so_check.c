@@ -6,9 +6,19 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:37:22 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/16 17:07:38 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:58:02 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	so_len(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\n')
+		i++;
+	return (i);
+}
 
 int	so_check_closed(t_data data)
 {

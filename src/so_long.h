@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:07 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/22 12:21:48 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:04:39 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
- typedef struct s_data
+typedef struct s_data
 {
 	void	*mlx;
 	void	*win;

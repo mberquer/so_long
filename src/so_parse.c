@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:49:48 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/16 13:35:33 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:19:53 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	so_count(char *path)
 	return (count);
 }
 
-void	so_parse(t_data data, char *path)
+int	so_parse(t_data data, char *path)
 {
 	int		i;
 	int		fd;
@@ -40,11 +40,12 @@ void	so_parse(t_data data, char *path)
 	count = so_count(path);
 	data->map = malloc(count + 1 * sizeof(char *));
 	if (!data->map)
-		return (NULL);
+		return (0);
 	data->map[count + 1] = '\0';
 	fd = open(path, O_RDONLY);
 	data->map[i] = ft_getnextline(fd);
 	while (data->map[i++])
 		data->map[i] = ft_getnexgline(fd);
 	close(fd);
+	return (1);
 }
