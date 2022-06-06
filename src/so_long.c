@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:09 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/25 16:21:08 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:11:12 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	so_size(t_data data)
 		data->h_win++;
 }
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
 	t_data	*data;
 
-	if (ac == 2 && check(av[1]))
+	if (ac = 2 && check(av[1]))
 	{
 		data->mlx = mlx_init();
 		if (!data->mlx)

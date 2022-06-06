@@ -23,6 +23,7 @@ void	so_step(t_data data)
 
 int	so_move_up(t_data data)
 {	
+	data->tile = data->map[data->h_y][data->h_x];
 	so_step(data);
 	if (data->map[data->h_y - 1][data->h_x] == 'C')
 	{
@@ -37,7 +38,7 @@ int	so_move_up(t_data data)
 
 int	so_move_left(t_data data)
 {	
-	data->tile = data->map[data->h_y][data->h_x]
+	data->tile = data->map[data->h_y][data->h_x];
 	so_step(data);
 	if (data->map[data->h_y][data->h_x - 1] == 'C')
 	{
@@ -52,6 +53,7 @@ int	so_move_left(t_data data)
 
 int	so_move_down(t_data data)
 {	
+	data->tile = data->map[data->h_y][data->h_x];
 	so_step(data);
 	if (data->map[data->h_y + 1][data->h_x] == 'C')
 	{
@@ -66,6 +68,7 @@ int	so_move_down(t_data data)
 
 int	so_move_right(t_data data)
 {	
+	data->tile = data->map[data->h_y][data->h_x];
 	so_step(data);
 	if (data->map[data->h_y][data->h_x + 1] == 'C')
 	{
