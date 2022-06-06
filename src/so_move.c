@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "so_long.h"
+
 void	so_step(t_data data)
 {
 	ft_printf("%i\n", ++data->s_count);

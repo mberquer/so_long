@@ -9,6 +9,9 @@
 /*   Updated: 2022/06/05 21:26:25 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "so_long.h"
+
 void	so_move(t_data data, char c)
 {
 	int	check;

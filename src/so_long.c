@@ -41,7 +41,7 @@ int main(int ac, char **av)
 		if (!so_image(data))
 			return (so_free);
 		so_event(data);
-		mlx_loop(data->mlx);
+		so_free(data);
 	}
 	write(1, "Error\nprovide .ber map\n", 23);
 }

@@ -14,15 +14,9 @@
 # define SO_LONG_H
 
 # include "../mlx_linux/mlx.h"
-# include <mlx.h>
-# include "get_next_line.h"
-# include <stdio.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
-# include <stdarg.h>
+# include "../gnl/get_next_line.h"
+# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_data
 {
@@ -45,4 +39,14 @@ typedef struct s_data
 	char	tile;
 
 }	t_data;
+
+int	so_check(t_data data);
+int	so_free(t_data data);
+int	so_image(t_data data);
+void	so_event(t_data data);
+int	so_move_right(t_data data);
+int	so_move_left(t_data data);
+int	so_move_up(t_data data);
+int	so_move_down(t_data data);
+int	so_parse(t_data data, char *path);
 #endif
