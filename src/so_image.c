@@ -64,5 +64,6 @@ int	so_image(t_data data)
 {
 	if (!so_assets(data))
 		return (0);
+	data->win = mlx_new_window(mlx, TILE * wh->x, TILE * wh->y, "so_long");
 	so_image_to_win(data);
 }

@@ -39,6 +39,10 @@ typedef struct s_data
 	int		s_count;
 	int		h_win;
 	int		l_win;
+	int		h_y;
+	int		h_x;
 	char	**map;
+	char	tile;
+
 }	t_data;
 #endif
