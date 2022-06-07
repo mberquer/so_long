@@ -6,7 +6,7 @@
 #    By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 11:26:16 by mberquer          #+#    #+#              #
-#    Updated: 2022/05/16 17:09:21 by mberquer         ###   ########.fr        #
+#    Updated: 2022/06/07 09:16:40 by mberquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,6 @@ LIBFT	= libft/libft.a
 
 ${NAME}:${OBJS}
 	make -s -C mlx_linux
-	make -s -C libft
 	make -s -C ft_printf
 	${CC} ${CFLAGS} ${OBJS} ${LIBDIR} ${LIBINC} -o ${NAME}
 

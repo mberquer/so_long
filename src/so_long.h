@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:07 by mberquer          #+#    #+#             */
-/*   Updated: 2022/05/25 15:04:39 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:17:36 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../mlx_linux/mlx.h"
 # include "../gnl/get_next_line.h"
-# include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
 
 typedef struct s_data
