@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:07 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/07 09:17:36 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/10 02:20:50 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ typedef struct s_data
 
 }	t_data;
 
-int	so_check(t_data data);
-int	so_free(t_data data);
-int	so_image(t_data data);
-void	so_event(t_data data);
-int	so_move_right(t_data data);
-int	so_move_left(t_data data);
-int	so_move_up(t_data data);
-int	so_move_down(t_data data);
-int	so_parse(t_data data, char *path);
+int	so_check(t_data *data);
+int	so_free(t_data *data);
+int	so_image(t_data *data);
+void	so_event(t_data *data);
+int	so_move_right(t_data *data);
+int	so_move_left(t_data *data);
+int	so_move_up(t_data *data);
+int	so_move_down(t_data *data);
+int	so_parse(t_data *data, char *path);
 #endif

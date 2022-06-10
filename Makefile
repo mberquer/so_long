@@ -6,47 +6,55 @@
 #    By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 11:26:16 by mberquer          #+#    #+#              #
-#    Updated: 2022/06/07 09:16:40 by mberquer         ###   ########.fr        #
+#    Updated: 2022/06/10 03:00:34 by mberquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= gcc
-RM		= rm -f
-NAME	= so_long
-SRCS	= $(addprefix src/, so_check.c so_event.c so_free.c so_image.c \
-			so_long.c so_move.c so_parse.c)
-OBJS	= ${SRCS:.c=.o}
-DEPS	= ${SRCS:.c=.d}
-MLXH	= -I /usr/local/include
-MLXS	= -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
-INCDIR	= $(addprefix -I, libmlx /usr/include includes libft)
-LIBDIR	= $(addprefix -L, libmlx /usr/lib libft)
-CFLAGS	= -Wall -Wextra -Werror -g
-LIBINC	= -lXext -lX11 -lm -lz -lmlx -lft
-LIBMLX	= mlx_linux/libmlx.a
-LIBFT	= libft/libft.a
+NAME = so_long
 
-%.o:%.c
-	${CC} ${CFLAGS} -MMD -c $< -o $@ ${INCDIR}
+SRCS = src/so_long.c \
+		src/so_check.c \
+		src/so_event.c \
+		src/so_free.c \
+		src/so_image.c \
+		src/so_move.c \
+		src/so_parse.c \
+		gnl/get_next_line.c \
+		gnl/get_next_line_utils.c \
+		ft_printf/ft_print_char.c \
+		ft_printf/ft_print_hexa.c \
+		ft_printf/ft_print_nbr.c \
+		ft_printf/ft_print_ptr.c \
+		ft_printf/ft_print_str.c \
+		ft_printf/ft_print_unsigned.c \
+		ft_printf/ft_printf.c \
+		
+OBJ = $(SRCS:%.c=%.o)
 
-${NAME}:${OBJS}
-	make -s -C mlx_linux
-	make -s -C ft_printf
-	${CC} ${CFLAGS} ${OBJS} ${LIBDIR} ${LIBINC} -o ${NAME}
+CC = cc 
 
-all:${NAME}
+MLX = mlx_linux/libmlx_Linux.a 
 
-clean:
-	make -s -C libft clean
-	${RM} ${OBJS} ${DEPS}
+$(NAME): $(OBJ) $(MLX)
+	$(CC) $(OBJ) -g3 -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -o $(NAME)
 
-fclean:clean
-	make -s -C libmlx clean
-	make -s -C libft fclean
-	${RM} ${NAME}
+%.o: %.c
+	$(CC) -g3 -DBUFFER_SIZE=1 -Wall -Wextra -Werror -I/usr/include -Imlx -O0 -c $< -o $@
 
-re:fclean all
+$(MLX):
+	make -C ./mlx_linux
 
--include ${DEPS}
 
-.PHONY: all clean fclean re
+clean: 
+	rm -rf $(OBJ)
+
+
+fclean: clean
+	rm -rf $(NAME)
+
+all: $(NAME) 
+	
+re: fclean
+	make all
+	
+.PHONY: clean fclean all re 
