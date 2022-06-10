@@ -6,7 +6,7 @@
 #    By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 11:26:16 by mberquer          #+#    #+#              #
-#    Updated: 2022/06/10 03:00:34 by mberquer         ###   ########.fr        #
+#    Updated: 2022/06/10 15:18:32 by mberquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,12 +31,12 @@ SRCS = src/so_long.c \
 		
 OBJ = $(SRCS:%.c=%.o)
 
-CC = cc 
+CC = cc
 
 MLX = mlx_linux/libmlx_Linux.a 
 
 $(NAME): $(OBJ) $(MLX)
-	$(CC) $(OBJ) -g3 -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(OBJ) -g3 -fsanitize=address -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -o $(NAME)
 
 %.o: %.c
 	$(CC) -g3 -DBUFFER_SIZE=1 -Wall -Wextra -Werror -I/usr/include -Imlx -O0 -c $< -o $@

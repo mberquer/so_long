@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:37:22 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/10 02:23:19 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/10 16:44:56 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	so_check_closed(t_data *data)
 	while (data->map[++y])
 	{
 		x = -1;
-		while (data->map[y][++x])
+		while (data->map[y][++x] != '\n')
 		{
 			if ((y == 0 || y + 1 == '\0') && (data->map[y][x] != '1'))
 			{

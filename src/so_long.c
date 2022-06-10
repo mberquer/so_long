@@ -6,11 +6,12 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:09 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/10 04:21:16 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/10 17:39:26 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdio.h>
 
 void so_init(t_data *data)
 {
@@ -18,6 +19,12 @@ void so_init(t_data *data)
 	data->p_count = 0;
 	data->e_count = 0;
 	data->s_count = 0;
+	data->win = NULL;
+	data->img_wall = NULL;
+	data->img_player = NULL;
+	data->img_exit = NULL;
+	data->img_nothing = NULL;
+	data->img_collectible = NULL;
 }
 int	check(char *path)
 {
@@ -59,11 +66,11 @@ int main(int ac, char **av)
 			return (so_free(data));
 		so_size(data);
 		data->win = mlx_new_window
-			(data->mlx, 32 * data->l_win, 32 * data->h_win, "bababoi");
+			(data->mlx, (32 * data->l_win), (32 * data->h_win), "bababoi");
 		if (!so_image(data))
 			return (so_free(data));
 		so_event(data);
 		so_free(data);
 	}
-	write(1, "Error\nprovide ->ber map\n", 23);
+	write(1, "Error\nprovide .ber map\n", 23);
 }

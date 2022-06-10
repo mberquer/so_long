@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:07 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/10 02:20:50 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/10 17:38:42 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_data
 	int		h_x;
 	char	**map;
 	char	tile;
-
 }	t_data;
 
 int	so_check(t_data *data);
