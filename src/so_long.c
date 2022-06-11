@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:09 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/10 17:39:26 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:01:32 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	check(char *path)
 	i = 0;
 	while (path[i +4])
 		i++;
-	if (path[i] == '.' && path[i +1] == 'b' && path[i +2] == 'e' && path[i +3] == 'r')
+	if (path[i - 1] >= 0 && path[i] == '.' && path[i +1] == 'b' && path[i +2] == 'e' && path[i +3] == 'r')
 		return (1);
 	return (0);
 }
@@ -70,7 +70,7 @@ int main(int ac, char **av)
 		if (!so_image(data))
 			return (so_free(data));
 		so_event(data);
-		so_free(data);
+		return (so_free(data));
 	}
 	write(1, "Error\nprovide .ber map\n", 23);
 }

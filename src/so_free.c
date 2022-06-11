@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 08:16:56 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/10 15:48:43 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:55:54 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	so_free_mlxwin(t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 	if (data->mlx)
 		mlx_destroy_display(data->mlx);
+	free(data->mlx);
 }
 
 void	so_destroy_image(t_data *data)
@@ -46,8 +47,9 @@ void	so_free_map(t_data *data)
 
 int	so_free(t_data *data)
 {
-	so_free_mlxwin(data);
 	so_destroy_image(data);
+	so_free_mlxwin(data);
 	so_free_map(data);
+	free(data);
 	return (0);
 }

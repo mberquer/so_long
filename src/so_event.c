@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 21:26:25 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/10 17:49:51 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:03:24 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	findp(t_data *data)
 	while (data->map[++j])
 	{
 		i = -1;
-		while (data->map[j][++i])
+		while (data->map[j][++i] != '\n')
 		{
 			if (data->map[j][i] == 'P')
 			{
@@ -51,13 +51,13 @@ int	so_key(int key, t_data *data)
 {
 	if (key == 65307)
 		mlx_loop_end(data->mlx);
-	else if (key == 65363 || key == 97)
+	else if (key == 65361 || key == 119)
 		so_move(data, 'W');
-	else if (key == 65364 || key == 119)
+	else if (key == 65362 || key == 97)
 		so_move(data, 'A');
-	else if (key == 65363 || key == 100)
+	else if (key == 65363 || key == 115)
 		so_move(data, 'S');
-	else if (key == 65362 || key == 115)
+	else if (key == 65364 || key == 100)
 		so_move(data, 'D');
 	return (0);
 }

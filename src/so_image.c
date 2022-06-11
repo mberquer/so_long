@@ -6,12 +6,11 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:08:17 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/10 17:10:10 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/11 16:57:35 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 void	*wich(char a, t_data *data)
 {
@@ -30,16 +29,16 @@ void	*wich(char a, t_data *data)
 
 int	so_image_to_win(t_data *data)
 {
-	int	i;
-	int	j;
+	int	y;
+	int	x;
 
-	i = -1;
-	while (data->map[++i])
+	y = -1;
+	while (data->map[++y])
 	{
-		j = -1;
-		while (data->map[i][++j] && data->map[i][j] != '\n')
+		x = -1;
+		while (data->map[y][++x] && data->map[y][x] != '\n')
 			mlx_put_image_to_window(data->mlx, data->win, wich
-				(data->map[i][j], data), 32 * j, 32 * i);
+				(data->map[y][x], data), 32 * x, 32 * y);
 	}
 	return (1);
 }
