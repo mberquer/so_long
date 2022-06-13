@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:09 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/11 18:01:32 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:50:41 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	check(char *path)
 	i = 0;
 	while (path[i +4])
 		i++;
-	if (path[i - 1] >= 0 && path[i] == '.' && path[i +1] == 'b' && path[i +2] == 'e' && path[i +3] == 'r')
+	if (path[i] == '.' && path[i +1] == 'b' && path[i +2] == 'e' && path[i +3] == 'r')
 		return (1);
 	return (0);
 }

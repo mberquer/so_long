@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 21:26:25 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/11 17:03:24 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:18:21 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	findp(t_data *data)
 	while (data->map[++j])
 	{
 		i = -1;
-		while (data->map[j][++i] != '\n')
+		while (data->map[j][++i] && data->map[j][i] != '\n')
 		{
 			if (data->map[j][i] == 'P')
 			{
