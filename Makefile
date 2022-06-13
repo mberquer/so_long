@@ -6,7 +6,7 @@
 #    By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 11:26:16 by mberquer          #+#    #+#              #
-#    Updated: 2022/06/10 15:18:32 by mberquer         ###   ########.fr        #
+#    Updated: 2022/06/13 12:06:15 by mberquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,14 @@ $(MLX):
 clean: 
 	rm -rf $(OBJ)
 
+test: $(NAME)
+	./so_long maps/missingC.ber
+	./so_long maps/missingE.ber
+	./so_long maps/missingP.ber
+	./so_long maps/DoubleP.ber
+	./so_long maps/NotClosed.ber
+	./so_long maps/NotRectangle.ber
+	./so_long maps/NotSymb.ber
 
 fclean: clean
 	rm -rf $(NAME)

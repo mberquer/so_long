@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:37:22 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/13 12:00:02 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/13 12:26:11 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int	so_check_closed(t_data *data)
 				write(1, "Error\nmap not closed by \"1\"\n", 28);
 				return (0);
 			}
-			else if ((x == 0 || (data->map[y][x + 1] == '\n' || !data->map[y][x + 1])) && (data->map[y][x] != '1'))
+			else if ((x == 0 || (data->map[y][x + 1] == '\n'
+					|| !data->map[y][x + 1])) && (data->map[y][x] != '1'))
 			{
 				write(1, "Error\nmap not closed by \"1\"\n", 28);
 				return (0);

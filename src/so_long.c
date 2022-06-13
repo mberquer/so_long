@@ -6,14 +6,13 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:09 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/13 10:50:41 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/13 12:30:54 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
-void so_init(t_data *data)
+void	so_init(t_data *data)
 {
 	data->c_count = 0;
 	data->p_count = 0;
@@ -26,6 +25,7 @@ void so_init(t_data *data)
 	data->img_nothing = NULL;
 	data->img_collectible = NULL;
 }
+
 int	check(char *path)
 {
 	int	i;
@@ -33,10 +33,12 @@ int	check(char *path)
 	i = 0;
 	while (path[i +4])
 		i++;
-	if (path[i] == '.' && path[i +1] == 'b' && path[i +2] == 'e' && path[i +3] == 'r')
+	if (path[i] == '.' && path[i +1] == 'b'
+		&& path[i +2] == 'e' && path[i +3] == 'r')
 		return (1);
 	return (0);
 }
+
 void	so_size(t_data *data)
 {
 	data->l_win = 0;
@@ -47,7 +49,7 @@ void	so_size(t_data *data)
 		data->h_win++;
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_data	*data;
 

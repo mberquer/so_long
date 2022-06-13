@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:08:17 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/11 16:57:35 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/13 12:25:41 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int	so_assets(t_data *data)
 	int	i;
 	int	j;
 
-	data->img_player = mlx_xpm_file_to_image(data->mlx, "assets/players.xpm", &i, &j);
+	data->img_player = mlx_xpm_file_to_image
+		(data->mlx, "assets/players.xpm", &i, &j);
 	if (!data->img_player)
 		return (0);
 	data->img_collectible = mlx_xpm_file_to_image
@@ -59,10 +60,12 @@ int	so_assets(t_data *data)
 		(data->mlx, "assets/nothing.xpm", &i, &i);
 	if (!data->img_nothing)
 		return (0);
-	data->img_wall = mlx_xpm_file_to_image(data->mlx, "assets/walls.xpm", &i, &i);
+	data->img_wall = mlx_xpm_file_to_image
+		(data->mlx, "assets/walls.xpm", &i, &i);
 	if (!data->img_wall)
 		return (0);
-	data->img_exit = mlx_xpm_file_to_image(data->mlx, "assets/exits.xpm", &i, &i);
+	data->img_exit = mlx_xpm_file_to_image
+		(data->mlx, "assets/exits.xpm", &i, &i);
 	if (!data->img_exit)
 		return (0);
 	return (1);

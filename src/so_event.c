@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 21:26:25 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/13 11:18:21 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/13 12:24:44 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	findp(t_data *data)
 {
-	int i;
+	int	i;
 	int	j;
 
 	j = -1;
@@ -31,6 +31,7 @@ void	findp(t_data *data)
 		}
 	}
 }
+
 void	so_move(t_data *data, char c)
 {
 	int	check;
@@ -47,17 +48,18 @@ void	so_move(t_data *data, char c)
 	if (check)
 		mlx_loop_end(data->mlx);
 }
+
 int	so_key(int key, t_data *data)
 {
 	if (key == 65307)
 		mlx_loop_end(data->mlx);
-	else if (key == 65361 || key == 119)
+	else if (key == 119)
 		so_move(data, 'W');
-	else if (key == 65362 || key == 97)
+	else if (key == 97)
 		so_move(data, 'A');
-	else if (key == 65363 || key == 115)
+	else if (key == 115)
 		so_move(data, 'S');
-	else if (key == 65364 || key == 100)
+	else if (key == 100)
 		so_move(data, 'D');
 	return (0);
 }
