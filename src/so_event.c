@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 21:26:25 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/13 12:24:44 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:41:20 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void	so_move(t_data *data, char c)
 int	so_key(int key, t_data *data)
 {
 	if (key == 65307)
+	{
+		ft_printf("\n");
 		mlx_loop_end(data->mlx);
+	}
 	else if (key == 119)
 		so_move(data, 'W');
 	else if (key == 97)

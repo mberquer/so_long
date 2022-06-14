@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:08:17 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/13 12:25:41 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:38:38 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,9 @@ int	so_image_to_win(t_data *data)
 int	so_assets(t_data *data)
 {
 	int	i;
-	int	j;
 
 	data->img_player = mlx_xpm_file_to_image
-		(data->mlx, "assets/players.xpm", &i, &j);
+		(data->mlx, "assets/players.xpm", &i, &i);
 	if (!data->img_player)
 		return (0);
 	data->img_collectible = mlx_xpm_file_to_image
@@ -74,7 +73,10 @@ int	so_assets(t_data *data)
 int	so_image(t_data *data)
 {
 	if (!so_assets(data))
+	{
+		ft_printf("Error\nimage initialisation failed\n");
 		return (0);
+	}
 	so_image_to_win(data);
 	return (1);
 }

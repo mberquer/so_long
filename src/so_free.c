@@ -6,7 +6,7 @@
 /*   By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 08:16:56 by mberquer          #+#    #+#             */
-/*   Updated: 2022/06/11 17:55:54 by mberquer         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:28:15 by mberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,5 @@ int	so_free(t_data *data)
 	so_destroy_image(data);
 	so_free_mlxwin(data);
 	so_free_map(data);
-	free(data);
 	return (0);
 }

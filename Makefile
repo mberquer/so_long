@@ -6,7 +6,7 @@
 #    By: mberquer <mberquer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 11:26:16 by mberquer          #+#    #+#              #
-#    Updated: 2022/06/13 12:06:15 by mberquer         ###   ########.fr        #
+#    Updated: 2022/06/14 13:22:59 by mberquer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ CC = cc
 MLX = mlx_linux/libmlx_Linux.a 
 
 $(NAME): $(OBJ) $(MLX)
-	$(CC) $(OBJ) -g3 -fsanitize=address -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(OBJ) -g3 -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -o $(NAME) #-fsanitize=address
 
 %.o: %.c
 	$(CC) -g3 -DBUFFER_SIZE=1 -Wall -Wextra -Werror -I/usr/include -Imlx -O0 -c $< -o $@
@@ -49,13 +49,13 @@ clean:
 	rm -rf $(OBJ)
 
 test: $(NAME)
-	./so_long maps/missingC.ber
-	./so_long maps/missingE.ber
-	./so_long maps/missingP.ber
-	./so_long maps/DoubleP.ber
-	./so_long maps/NotClosed.ber
-	./so_long maps/NotRectangle.ber
-	./so_long maps/NotSymb.ber
+	valgrind ./so_long maps/missingC.ber
+	valgrind ./so_long maps/missingE.ber
+	valgrind ./so_long maps/missingP.ber
+	valgrind ./so_long maps/DoubleP.ber
+	valgrind ./so_long maps/NotClosed.ber
+	valgrind ./so_long maps/NotRectangle.ber
+	valgrind ./so_long maps/NotSymb.ber
 
 fclean: clean
 	rm -rf $(NAME)
